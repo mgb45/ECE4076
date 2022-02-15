@@ -8,5 +8,5 @@ ECE4076 is a computer vision unit at Monash University, covering both classical 
 - Week 3: Invariances and image transformations, assymetric feature matching [(notebook)](https://github.com/mgb45/ECE4076/blob/main/Week%203%20-%20Invariances%20and%20Trees.ipynb)
 - Week 4: Camera models and homography estimation using RANSAC [(notebook)](https://github.com/mgb45/ECE4076/blob/main/Week%204%20-%20Camera%20models%20and%20homographies.ipynb)
 - Week 5: Camera projection and vanishing points and lines [(notebook)](https://github.com/mgb45/ECE4076/blob/main/Week%205%20-%20Vanishing%20points%20and%20lines.ipynb)
-- Week 6: Multiple view geometry, space carving 
+- Week 6: Multiple view geometry, space carving [(notebook)](https://github.com/mgb45/ECE4076/blob/main/Week%206%20-%20Stereo%20vision%20and%20space%20carving.ipynb)
 
