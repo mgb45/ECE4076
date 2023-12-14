@@ -20,6 +20,7 @@ There is some additional material we unfortunately don't have time to cover in c
 * Vision transformers [(notebook)](/extra_content/vit.ipynb)
 * Generative Adversarial Networks (todo)
 * Variational Autoencoders (todo)
+* Clip (todo)
 * Diffusion models (todo)
 
 
