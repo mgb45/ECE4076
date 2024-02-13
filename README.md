@@ -1,7 +1,7 @@
 # ECE4076
 Interactive class notebooks for ECE4076 Computer Vision.
 
-ECE4076 is a computer vision unit at Monash University, covering both classical computer vision and modern deep learning methods. These notebooks are in class activities used alongside pre-recorded lectures covering more detailed material, and paired with laboratory sessions where students implement related concepts.  
+ECE4076 is a computer vision unit at Monash University, covering both classical computer vision and modern deep learning methods. These notebooks are in class activities used alongside pre-recorded lectures covering more detailed material, and paired with laboratory sessions where students implement related concepts.
 
 - Week 1: Image handling and basic manipulation, high dimensional signals [(notebook)](https://github.com/mgb45/ECE4076/blob/main/Week%201%20-%20Image%20handling%20and%20basic%20operations.ipynb)
 - Week 2: Image filtering, Difference of Gaussians, Keypoint Detection, Patch Matching using SSD [(notebook)](https://github.com/mgb45/ECE4076/blob/main/Week%202%20-%20Image%20Filtering%20and%20Patch%20Matching.ipynb)
