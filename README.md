@@ -1,5 +1,5 @@
-# ECE4076
-Interactive class notebooks for ECE4076 Computer Vision.
+# ECE4076/5176
+Interactive class notebooks for ECE4076/5176 Computer Vision.
 
 ECE4076 is a computer vision unit at Monash University, covering both classical computer vision and modern deep learning methods. These notebooks are in class activities used alongside pre-recorded lectures covering more detailed material, and paired with laboratory sessions where students implement related concepts.
 
@@ -23,4 +23,11 @@ There is some additional material we unfortunately don't have time to cover in c
 * Clip (to be improved)
 * Diffusion models (todo)
 
+You may want to brush up on some python skills before attempting these, using the [notebook](https://github.com/jhy9968/CV_python_intro_ws)
+
+
+Contributors:
+
+* Michael Burke
+* Mehrtash Harandi
 
