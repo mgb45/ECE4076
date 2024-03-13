@@ -17,11 +17,11 @@ ECE4076 is a computer vision unit at Monash University, covering both classical 
 - Week 12: Image segmentation with U-Nets
 
 There is some additional material we unfortunately don't have time to cover in class in the [bonus content folder ](/bonus_content).
-* Vision transformers 
+* Vision transformers
+* Variational autoencoders
 * Generative Adversarial Networks (todo)
-* Variational Autoencoders (todo)
 * Clip (to be improved)
-* Diffusion models (todo)
+* Diffusion models (to be improved - make it actually work)
 
 You may want to brush up on some python skills before attempting these, using the [notebook](https://github.com/jhy9968/CV_python_intro_ws),
 
