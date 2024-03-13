@@ -1,7 +1,7 @@
 # ECE4076/5176
 Interactive class notebooks for ECE4076/5176 Computer Vision.
 
-ECE4076 is a computer vision unit at Monash University, covering both classical computer vision and modern deep learning methods. These notebooks are in class activities used alongside pre-recorded lectures covering more detailed material, and paired with laboratory sessions where students implement related concepts.
+ECE4076/5176 is a computer vision unit at Monash University, covering both classical computer vision and modern deep learning methods. These notebooks are in class activities used alongside pre-recorded lectures covering more detailed material, and paired with laboratory sessions where students implement related concepts.
 
 You may want to brush up on some python skills before attempting these, using the [notebook](https://github.com/jhy9968/CV_python_intro_ws).
 
