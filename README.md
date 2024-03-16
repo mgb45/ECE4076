@@ -21,7 +21,7 @@ You may want to brush up on some python skills before attempting these, using th
 There is some additional material we unfortunately don't have time to cover in class in the [bonus content folder ](/bonus_content).
 * Vision transformers
 * Variational autoencoders
-* Generative Adversarial Networks (todo)
+* Generative Adversarial Networks
 * Clip (to be improved)
 * Diffusion models (to be improved - make it actually work)
 
