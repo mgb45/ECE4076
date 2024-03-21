@@ -22,8 +22,8 @@ There is some additional material we unfortunately don't have time to cover in c
 * Vision transformers
 * Variational autoencoders
 * Generative Adversarial Networks
-* Clip (to be improved)
-* Diffusion models (to be improved - make it actually work)
+* Clip
+* Diffusion models
 
 Contributors:
 
