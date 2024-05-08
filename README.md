@@ -25,8 +25,9 @@ There is some additional material we unfortunately don't have time to cover in c
 * Clip
 * Diffusion models
 
-Contributors:
+Contributors and Acknowledgements:
 
 * Michael Burke
 * Mehrtash Harandi
+* Week 5 is based on a nice example from Tom Drummond 
 
