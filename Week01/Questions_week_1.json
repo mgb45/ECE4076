@@ -1,0 +1,105 @@
+[{
+    "question": "Try to choose a different row to plot for your image, and re-run the code above to see if you can interpret this yourself. What happens at the edges of objects?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "We see discontinuities and peaks/dips in the image intensity",
+            "correct": true,
+            "feedback": "Correct."
+        },
+        {
+            "answer": "The intensity magnitude is larger.",
+            "correct": false,
+            "feedback": "Not always, it could go up or down, depending on the colour of the image region."
+        },
+        {
+            "answer": "The intensity magnitude is smaller.",
+            "correct": false,
+            "feedback": "Not always, it could go up or down, depending on the colour of the image region."
+        },
+        {
+            "answer": "The intensity changes rapidly.",
+            "correct": true,
+            "feedback": "Correct."
+        },
+        {
+            "answer": "The intensity changes slowly.",
+            "correct": false,
+            "feedback": "Take another look, it changes slowly when the colour is similar across pixels."
+        }
+    ]
+},
+{
+"question": "How does this change for natural, real world images",
+"type": "many_choice",
+"answers": [
+    {
+        "answer": "It doesn't",
+        "correct": true,
+        "feedback": "Are you sure you used a real image?"
+    },
+    {
+        "answer": "The intensity is much noisier",
+        "correct": true,
+        "feedback": "Correct."
+    },
+    {
+        "answer": "The intensity magnitude is larger.",
+        "correct": false,
+        "feedback": "Not always, the magnitude of the intensity can vary depending on the lighting conditions."
+    },
+    {
+        "answer": "The intensity magnitude is smaller.",
+        "correct": false,
+        "feedback": "Not always, the magnitude of the intensity can vary depending on the lighting conditions."
+    }
+]
+},
+{
+    "question": "Now modify the code above to plot columns instead of rows. Which index is used in a numpy array to represent an image row?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "3",
+            "correct": false,
+            "feedback": "Are you a matlab user?"
+        },
+        {
+            "answer": "2",
+            "correct": false,
+            "feedback": "This index stores the channels of the image (eg. red green blue)."
+        },
+        {
+            "answer": "1",
+            "correct": true,
+            "feedback": "Correct. In numpy images are represented as row, column, channel. In many deep learning frameworks though, we tend to use a channel, row, column format."
+        },
+        {
+            "answer": "0",
+            "correct": false,
+            "feedback": "This index stores the columns of an image."
+        }
+    ]
+},
+{
+    "question": "Think about the pre-recorded videos on light, image formation and human vision receptors. Why do you think this approach works better on my synthetic image than yours?",
+    "type": "multiple_choice",
+    "answers": [
+        {
+            "answer": "The synthetic image has less variation in intensity.",
+            "correct": true,
+            "feedback": "Correct"
+        },
+        {
+            "answer": "The synthetic image has greater magnitude differences, allowing for simpler threshold selection",
+            "correct": false,
+            "feedback": "This may make it easier to eyeball a threshold, but signal to noise ratio is more important."
+        },
+        {
+            "answer": "The synthetic image has more rapid edge frequency changees.",
+            "correct": false,
+            "feedback": "The thresholding technique we have considered only makes use of amplitude, it doesn't consider the intensity change over pixels."
+        }
+    ]
+}
+]
