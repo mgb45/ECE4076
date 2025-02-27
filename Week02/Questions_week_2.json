@@ -1,0 +1,185 @@
+[{
+    "question": "You have modified the code to replace the original noise with thermal noise using additive Gaussian noise (np.random.randn()). After re-running the code and comparing the median and mean filter approaches, which of the following statements is most accurate?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "The output did not change significantly because all noise types behave similarly",
+            "correct": false,
+            "feedback": "Maybe, but more systematic testing would show that the mean filter is effective at smoothing Gaussian noise by averaging pixel intensities.  The median is better at replacing localised noise, while not blurring the image so better suited to salt and pepper noise."
+        },
+        {
+            "answer": "The median filter is more effective at removing Gaussian noise compared to the mean filter.",
+            "correct": false,
+            "feedback": "The mean filter smooths the image by averaging neighboring pixel values, which helps reduce Gaussian noise more effectively. The median is better at replacing localised noise, while not blurring the image."
+        },
+        {
+            "answer": "The mean filter is more effective at removing Gaussian noise compared to the median filter.",
+            "correct": true,
+            "feedback": "Correct."
+        },
+        {
+            "answer": "Neither filter is effective; Gaussian noise requires a completely different approach.",
+            "correct": false,
+            "feedback": "The mean filter is effective at smoothing Gaussian noise by averaging pixel intensities.  The median is better at replacing localised noise, while not blurring the image so better suited to salt and pepper noise."
+        }
+        ]
+},
+{
+    "question": "What effect does adding the edge response to the original image have?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "It enhances edges and sharpens the image.",
+            "correct": true,
+            "feedback": "Correct! Adding the edge response highlights edges, making the image appear sharper."
+        },
+        {
+            "answer": "It blurs the image and reduces contrast.",
+            "correct": false,
+            "feedback": "Incorrect. Blurring occurs when averaging or smoothing is applied, whereas adding edge response enhances sharpness."
+        },
+        {
+            "answer": "It removes all noise from the image.",
+            "correct": false,
+            "feedback": "Incorrect. While edge enhancement may improve clarity, it does not directly remove noise."
+        },
+        {
+            "answer": "It inverts the colors in the image.",
+            "correct": false,
+            "feedback": "Incorrect. Edge enhancement does not invert colors; it enhances contrast along edges."
+        }
+    ]
+},
+{
+    "question": "What kind of artifacts might be introduced when adding the edge response to the original image?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "Overshooting and halo effects around edges.",
+            "correct": true,
+            "feedback": "Correct! Edge enhancement can sometimes create bright or dark halos around strong edges."
+        },
+        {
+            "answer": "Random color distortions.",
+            "correct": false,
+            "feedback": "Incorrect. Edge enhancement does not typically introduce color distortions."
+        },
+        {
+            "answer": "Weird effects due to overflow issues caused by uint8 limits.",
+            "correct": true,
+            "feedback": "You may want to correct these by normalising the image again to get a clearer idea of what your image looks like."
+        },
+        {
+            "answer": "A significant increase in image resolution.",
+            "correct": false,
+            "feedback": "Incorrect. Sharpening enhances details but does not increase the actual resolution of an image."
+        }
+    ]
+},
+{
+    "question": "How does image sharpening affect the texture in the background?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "It may enhance fine details and make the background appear more textured.",
+            "correct": true,
+            "feedback": "Correct! Edge enhancement can bring out more details in textured areas of the background."
+        },
+        {
+            "answer": "It completely removes the background texture.",
+            "correct": false,
+            "feedback": "Incorrect. Sharpening does not remove texture; instead, it can either enhance or exaggerate it."
+        },
+        {
+            "answer": "It makes the background completely smooth.",
+            "correct": false,
+            "feedback": "Incorrect. Edge enhancement does not smooth out textures unless combined with a smoothing filter."
+        },
+        {
+            "answer": "It has no effect on the background at all.",
+            "correct": false,
+            "feedback": "Incorrect. Edge enhancement affects all parts of the image, including the background, by making textures more prominent."
+        }
+    ]
+},
+{
+    "question": "Why might the sum of squared distances (SSD) error metric fail to accurately measure the similarity between image patches?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "Because SSD is sensitive to changes in brightness and contrast.",
+            "correct": true,
+            "feedback": "Correct! SSD directly compares pixel intensities, making it highly sensitive to even minor illumination variations between patches."
+        },
+        {
+            "answer": "Because SSD completely ignores pixel intensity differences.",
+            "correct": false,
+            "feedback": "Incorrect. In fact, SSD calculates the squared differences in pixel intensities, so it directly measures these differences."
+        },
+        {
+            "answer": "Because SSD automatically compensates for rotation and scale differences.",
+            "correct": false,
+            "feedback": "Incorrect. SSD does not account for geometric variations such as rotation or scale, which can lead to incorrect matches."
+        },
+        {
+            "answer": "Because SSD is invariant to noise.",
+            "correct": false,
+            "feedback": "Incorrect. SSD is actually very sensitive to noise, which can significantly distort the similarity measurement between patches."
+        }
+    ]
+},
+{
+    "question": "Which of the following factors is most likely to cause incorrect matches in keypoint matching when using SSD as the error metric?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "Illumination changes between the images.",
+            "correct": true,
+            "feedback": "Correct! Illumination changes can alter pixel intensities, causing SSD to misinterpret the similarity between patches."
+        },
+        {
+            "answer": "Exact replica of image patches.",
+            "correct": false,
+            "feedback": "Incorrect. Exact replicas would yield very low SSD values and are unlikely to cause matching errors."
+        },
+        {
+            "answer": "Uniform noise-free images.",
+            "correct": false,
+            "feedback": "Incorrect. Noise-free images with uniform illumination are ideal for SSD matching."
+        },
+        {
+            "answer": "Perfectly aligned keypoints.",
+            "correct": false,
+            "feedback": "Incorrect. Perfect alignment would result in the best matching performance, not errors."
+        }
+    ]
+},
+{
+    "question": "Which of the following is a combination of causes of variation that could negatively influence keypoint matching using SSD?",
+    "type": "many_choice",
+    "answers": [
+        {
+            "answer": "Rotation, scale, viewpoint changes, and illumination variations.",
+            "correct": true,
+            "feedback": "Correct! Variations in rotation, scale, viewpoint, and illumination all affect the pixel intensity values, making SSD a less reliable similarity measure under these conditions."
+        },
+        {
+            "answer": "Only rotation and scale differences.",
+            "correct": false,
+            "feedback": "Incorrect. While rotation and scale do contribute, illumination and viewpoint changes also have significant impacts on SSD-based matching."
+        },
+        {
+            "answer": "Only noise and compression artifacts.",
+            "correct": false,
+            "feedback": "Incorrect. Noise and compression artifacts can affect matching, but SSD is more broadly affected by geometric and illumination variations as well."
+        },
+        {
+            "answer": "Only changes in the background texture.",
+            "correct": false,
+            "feedback": "Incorrect. Changes in background texture may have an effect, but they are not the primary factors influencing SSD errors compared to geometric and illumination variations."
+        }
+    ]
+}
+
+
+]

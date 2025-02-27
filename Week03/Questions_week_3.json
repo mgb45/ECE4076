@@ -1,0 +1,106 @@
+[
+    {
+        "question": "If there are K1 keypoints in the first image, K2 keypoints in the second image, and N different viewpoint variations, how many distance computations are needed for the nearest neighbor search?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "K1 * K2 * N",
+                "correct": true,
+                "feedback": "Correct! Each keypoint in the first image is compared with every keypoint in the second image across all N viewpoint variations."
+            },
+            {
+                "answer": "K1 + K2 + N",
+                "correct": false,
+                "feedback": "Incorrect. The total computations grow multiplicatively, not additively."
+            },
+            {
+                "answer": "K1 * K2",
+                "correct": false,
+                "feedback": "Incorrect. This formula does not account for the additional viewpoint variations, which increase the number of comparisons."
+            },
+            {
+                "answer": "K1 * N",
+                "correct": false,
+                "feedback": "Incorrect. This only accounts for the variations in the first image, but the second image’s keypoints must also be considered."
+            }
+        ]
+    },
+    {
+        "question": "What happens to the speed of the nearest neighbor search as the value of N increases?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "The search slows down because more comparisons must be made.",
+                "correct": true,
+                "feedback": "Correct! Increasing N increases the number of viewpoint variations, leading to more distance computations and slowing down the search."
+            },
+            {
+                "answer": "The search speeds up because more keypoints help reduce ambiguity.",
+                "correct": false,
+                "feedback": "Incorrect. More keypoints do not necessarily speed up the search; they increase the computational workload."
+            },
+            {
+                "answer": "The search remains unchanged because N does not affect computation time.",
+                "correct": false,
+                "feedback": "Incorrect. N directly influences the number of comparisons, making the search slower as it increases."
+            },
+            {
+                "answer": "The search becomes more accurate but does not change in speed.",
+                "correct": false,
+                "feedback": "Incorrect. While more viewpoint variations may improve accuracy, they also increase computational cost."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following are effective strategies to speed up the nearest neighbor search?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Use approximate nearest neighbor (ANN) methods such as k-d trees or FLANN.",
+                "correct": true,
+                "feedback": "Correct! ANN methods reduce the number of comparisons by efficiently organizing keypoints for fast retrieval."
+            },
+            {
+                "answer": "Use brute force matching with all keypoints.",
+                "correct": false,
+                "feedback": "Incorrect. Brute force matching is computationally expensive and slows down as the number of keypoints increases."
+            },
+            {
+                "answer": "Reduce the number of keypoints using feature selection techniques.",
+                "correct": true,
+                "feedback": "Correct! Selecting only the most distinctive keypoints reduces the number of comparisons needed."
+            },
+            {
+                "answer": "Design your feature descriptors to be invariant to certain variations (eg. rotation).",
+                "correct": true,
+                "feedback": "Correct! This reduces the number of variations you need to consider."
+            }
+        ]
+    },
+    {
+        "question": "How does modifying the descriptor length and patch width in the BRIEF detector affect its performance?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Increasing the descriptor length improves distinctiveness but may slow down matching.",
+                "correct": true,
+                "feedback": "Correct! A longer descriptor captures more details, making keypoints more unique, but it also increases computational cost."
+            },
+            {
+                "answer": "Decreasing the descriptor length always improves accuracy.",
+                "correct": false,
+                "feedback": "Incorrect. A shorter descriptor may reduce distinctiveness, leading to more incorrect matches."
+            },
+            {
+                "answer": "Increasing the patch width makes the descriptor more robust to viewpoint changes.",
+                "correct": false,
+                "feedback": "This may be true, but is also tied to the number of tests, too few to cover the enlarged region will reduce the distinctiveness of the feature."
+            },
+            {
+                "answer": "Reducing the patch width improves feature matching in all cases.",
+                "correct": false,
+                "feedback": "Incorrect. A smaller patch may reduce robustness, making the descriptor more sensitive to noise and minor transformations."
+            }
+        ]
+    }    
+]
