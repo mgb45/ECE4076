@@ -1,0 +1,283 @@
+[
+    {
+        "question": "What is the focal length of the camera based on the given intrinsic matrix?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "1200 pixels",
+                "correct": true,
+                "feedback": "Correct! The focal length is given by the diagonal elements of the intrinsic matrix (fx = fy = 1200)."
+            },
+            {
+                "answer": "340 pixels",
+                "correct": false,
+                "feedback": "Incorrect. This is the x-coordinate of the principal point, not the focal length."
+            },
+            {
+                "answer": "240 pixels",
+                "correct": false,
+                "feedback": "Incorrect. This is the y-coordinate of the principal point, not the focal length."
+            },
+            {
+                "answer": "1 pixel",
+                "correct": false,
+                "feedback": "Incorrect. This value corresponds to the scale factor in the homogeneous coordinate system."
+            }
+        ]
+    },
+    {
+        "question": "How is the field of view (FoV) of a camera estimated?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Using the formula: θ = 2 * tan⁻¹((sensor size / 2) / focal length)",
+                "correct": true,
+                "feedback": "Correct! The field of view depends on the sensor size and focal length."
+            },
+            {
+                "answer": "By multiplying the focal length by the principal point coordinates",
+                "correct": false,
+                "feedback": "Incorrect. The focal length and principal point are different parameters; FoV is computed using the tangent function."
+            },
+            {
+                "answer": "By summing the focal length and the image width",
+                "correct": false,
+                "feedback": "Incorrect. The field of view is not determined by a simple sum."
+            },
+            {
+                "answer": "It is always 90 degrees for any camera",
+                "correct": false,
+                "feedback": "Incorrect. The field of view varies depending on the lens and sensor properties."
+            }
+        ]
+    },
+    {
+        "question": "What is the estimated horizontal field of view (FoV) for this camera?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "31.3°",
+                "correct": true,
+                "feedback": "Correct! Using θ = 2 * tan⁻¹((340 / 1200)), the horizontal FoV is approximately 31.3°."
+            },
+            {
+                "answer": "22.6°",
+                "correct": false,
+                "feedback": "Incorrect. This is the vertical FoV."
+            },
+            {
+                "answer": "45°",
+                "correct": false,
+                "feedback": "Incorrect. This would require a different focal length-to-sensor size ratio."
+            },
+            {
+                "answer": "60°",
+                "correct": false,
+                "feedback": "Incorrect. The calculated FoV is much smaller based on the given focal length."
+            }
+        ]
+    },
+    {
+        "question": "What is the estimated image resolution based on the intrinsic matrix?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "680 × 480 pixels",
+                "correct": true,
+                "feedback": "Correct! The image width is approximately 2 * c_x = 680 pixels, and the height is 2 * c_y = 480 pixels."
+            },
+            {
+                "answer": "1920 × 1080 pixels",
+                "correct": false,
+                "feedback": "Incorrect. The principal point values suggest a much smaller resolution."
+            },
+            {
+                "answer": "1024 × 768 pixels",
+                "correct": false,
+                "feedback": "Incorrect. The intrinsic matrix does not support this resolution."
+            },
+            {
+                "answer": "320 × 240 pixels",
+                "correct": false,
+                "feedback": "Incorrect. The estimated resolution is higher than this."
+            }
+        ]
+    },
+    {
+        "question": "In the camera projection equation \\( \\mathbf{u} = \\mathbf{K} [\\mathbf{R} \\ | \\ \\mathbf{t}] \\mathbf{X} \\), what does the matrix \\( \\mathbf{R} \\) represent?",
+            "type": "many_choice",
+            "answers": [
+                {
+                    "answer": "The rotation of the camera in 3D space",
+                    "correct": true,
+                    "feedback": "Correct! The matrix \\( \\mathbf{R} \\) represents the camera's rotation."
+                },
+                {
+                    "answer": "The intrinsic parameters of the camera",
+                    "correct": false,
+                    "feedback": "Incorrect. The intrinsic parameters are contained in \\( \\mathbf{K} \\)."
+                },
+                {
+                    "answer": "The translation of the camera",
+                    "correct": false,
+                    "feedback": "Incorrect. The translation is represented by \\( \\mathbf{t} \\), not \\( \\mathbf{R} \\)."
+                },
+                {
+                    "answer": "The projection of 3D points onto the image plane",
+                    "correct": false,
+                    "feedback": "Incorrect. Projection is done by the full equation including \\( \\mathbf{K} \\), rotation, translation, and the 3D points."
+                }
+            ]
+        },
+        {
+            "question": "What effect does changing the translation vector \\( \\mathbf{t} \\) have on the projected image coordinates?",
+            "type": "many_choice",
+            "answers": [
+                {
+                    "answer": "It shifts all projected points in the image plane",
+                    "correct": true,
+                    "feedback": "Correct! Translation moves the camera, which causes all points to shift in the projected image."
+                },
+                {
+                    "answer": "It rotates the projected points in the image",
+                    "correct": false,
+                    "feedback": "Incorrect. Rotation affects the orientation of the points, not their shift."
+                },
+                {
+                    "answer": "It has no effect on the projection",
+                    "correct": false,
+                    "feedback": "Incorrect. Translation changes the position of the camera, which affects the projection."
+                }
+            ]
+        },
+        {
+            "question": "What happens to the projected points when you rotate the camera?",
+            "type": "many_choice",
+            "answers": [
+                {
+                    "answer": "The points appear to move as if the scene is rotating",
+                    "correct": true,
+                    "feedback": "Correct! Rotating the camera changes the viewpoint, making the scene appear to rotate."
+                },
+                {
+                    "answer": "The points remain fixed in the image",
+                    "correct": false,
+                    "feedback": "Incorrect. A camera rotation changes the perspective, affecting where points appear in the image."
+                },
+                {
+                    "answer": "The points become larger in the image",
+                    "correct": false,
+                    "feedback": "Incorrect. Rotation does not inherently change the size of objects in the image."
+                },
+                {
+                    "answer": "The points disappear from the image",
+                    "correct": false,
+                    "feedback": "Incorrect. Unless a point moves out of the field of view, it remains visible."
+                }
+            ]
+        },
+        {
+            "question": "When we modify the transformation matrix \\( T \\), are we moving the camera or the points?",
+            "type": "many_choice",
+            "answers": [
+                {
+                    "answer": "We are moving the camera",
+                    "correct": true,
+                    "feedback": "Correct! The transformation matrix describes the camera's pose relative to the world."
+                },
+                {
+                    "answer": "We are moving the points",
+                    "correct": false,
+                    "feedback": "Incorrect. The transformation matrix modifies how the camera views the points, not their actual positions in space."
+                },
+                {
+                    "answer": "Both the camera and points are moving",
+                    "correct": false,
+                    "feedback": "Incorrect. The transformation matrix applies to the camera’s motion, not the scene’s structure."
+                },
+                {
+                    "answer": "Neither the camera nor points are moving",
+                    "correct": false,
+                    "feedback": "Incorrect. The transformation matrix defines how the camera moves."
+                }
+            ]
+        },
+            {
+                "question": "What happens as more points are used and outliers start to corrupt the homography?",
+                "type": "many_choice",
+                "answers": [
+                    {
+                        "answer": "The homography becomes less accurate due to the influence of incorrect correspondences.",
+                        "correct": true,
+                        "feedback": "Correct! Outliers can distort the estimated transformation, leading to misalignment."
+                    },
+                    {
+                        "answer": "The homography becomes more accurate as more points provide better estimates.",
+                        "correct": false,
+                        "feedback": "Incorrect. While more inliers improve accuracy, outliers negatively impact the estimation."
+                    },
+                    {
+                        "answer": "The homography remains unchanged regardless of outliers.",
+                        "correct": false,
+                        "feedback": "Incorrect. Outliers can significantly affect the estimated homography."
+                    },
+                    {
+                        "answer": "RANSAC automatically removes all outliers, ensuring perfect homography estimation.",
+                        "correct": false,
+                        "feedback": "Incorrect. RANSAC helps reduce outliers but may not completely eliminate their effects."
+                    }
+                ]
+            },
+            {
+                "question": "Modify the code above to map image 2 onto image 1 instead, without recomputing the homography.",
+                "type": "many_choice",
+                "answers": [
+                    {
+                        "answer": "Use the inverse of the computed homography matrix.",
+                        "correct": true,
+                        "feedback": "Correct! Inverting the homography allows you to warp image 2 onto image 1."
+                    },
+                    {
+                        "answer": "Swap the source and destination images in the warping function without any other changes.",
+                        "correct": false,
+                        "feedback": "Incorrect. Simply swapping images will not work; the transformation must be inverted."
+                    },
+                    {
+                        "answer": "Recompute the homography from scratch using new keypoints.",
+                        "correct": false,
+                        "feedback": "Incorrect. The existing homography can be inverted to achieve the same effect."
+                    },
+                    {
+                        "answer": "Translate the image instead of using homography.",
+                        "correct": false,
+                        "feedback": "Incorrect. Translation alone does not account for perspective changes."
+                    }
+                ]
+            },
+            {
+                "question": "List at least three applications of homographies.",
+                "type": "many_choice",
+                "answers": [
+                    {
+                        "answer": "Image stitching and panorama creation.",
+                        "correct": true,
+                        "feedback": "Correct! Homographies allow seamless blending of multiple images into a single panoramic view."
+                    },
+                    {
+                        "answer": "Augmented reality (AR) applications.",
+                        "correct": true,
+                        "feedback": "Correct! Homographies are used to overlay virtual objects onto real-world scenes."
+                    },
+                    {
+                        "answer": "3D object reconstruction.",
+                        "correct": false,
+                        "feedback": "Incorrect! Homographies only apply to points-on planes or motion that can be modelled as planar, they aren't useful for the full 3D reconstruction problem."
+                    },
+                    {
+                        "answer": "Changing image brightness dynamically.",
+                        "correct": false,
+                        "feedback": "Incorrect. Homographies handle geometric transformations, not image brightness adjustments."
+                    }
+                ]
+            }
+        ]
