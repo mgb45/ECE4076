@@ -1,0 +1,54 @@
+[
+    {
+        "question": "If we wanted to avoid sparsity and perform dense stereo reconstruction, what constraints could we exploit?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Epipolar constraint to limit the search space for correspondences.",
+                "correct": true,
+                "feedback": "Correct! The epipolar constraint ensures that corresponding points must lie on the same epipolar line, reducing computational complexity."
+            },
+            {
+                "answer": "Smoothness assumption that neighboring pixels have similar disparities.",
+                "correct": true,
+                "feedback": "Correct! Enforcing smoothness helps in filling in missing depth values and obtaining a denser reconstruction."
+            },
+            {
+                "answer": "Using depth from monocular cues instead of stereo.",
+                "correct": false,
+                "feedback": "Incorrect. While monocular cues help estimate depth, they do not directly contribute to dense stereo reconstruction."
+            },
+            {
+                "answer": "Ignoring occluded regions to simplify computation.",
+                "correct": false,
+                "feedback": "Incorrect. Handling occlusions is crucial for accurate dense reconstruction."
+            }
+        ]
+    },
+    {
+        "question": "The approach above gave us a sparse 3D reconstruction, but also the camera pose between two views. Discuss how you could track how a camera has moved in space (visual odometry).",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Use feature tracking across multiple frames to estimate motion.",
+                "correct": true,
+                "feedback": "Correct! Tracking features helps determine how the camera has moved relative to the scene."
+            },
+            {
+                "answer": "Compute the Essential or Fundamental matrix to infer relative camera motion.",
+                "correct": true,
+                "feedback": "Correct! These matrices encode rotational and translational motion between two views."
+            },
+            {
+                "answer": "Assume the camera remains stationary and does not move.",
+                "correct": false,
+                "feedback": "Incorrect. Visual odometry specifically tracks motion, so assuming a stationary camera would invalidate the process."
+            },
+            {
+                "answer": "Estimate depth and use it to compute camera trajectory.",
+                "correct": true,
+                "feedback": "Correct! Depth estimation allows for full 3D motion tracking."
+            }
+        ]
+    }
+]
