@@ -1,0 +1,54 @@
+[
+    {
+        "question": "The code below applies the homography to lines. What do lines with near zero elements indicate?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "They correspond to lines near infinity.",
+                "correct": true,
+                "feedback": "Correct! Near zero elements suggest that the line is mapped close to infinity (horizontal or vertical)."
+            },
+            {
+                "answer": "They indicate perfectly aligned keypoints with no transformation needed.",
+                "correct": false,
+                "feedback": "Incorrect. Lines with near zero elements typically represent degenerate cases rather than well-aligned keypoints."
+            },
+            {
+                "answer": "They always correspond to vertical lines in the image.",
+                "correct": false,
+                "feedback": "Incorrect. Homography transformations affect all lines, and near-zero elements do not necessarily imply vertical orientation."
+            },
+            {
+                "answer": "They indicate an error in the homography computation, requiring recalibration.",
+                "correct": false,
+                "feedback": "Incorrect. While numerical instability can be an issue, near-zero elements do not always imply an error in homography computation."
+            }
+        ]
+    },
+    {
+        "question": "Why is ax + by + c = 0 a better representation of a line than y = mx + c?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "It generalizes to vertical lines, which cannot be represented by y = mx + c.",
+                "correct": true,
+                "feedback": "Correct! The implicit equation can represent all lines, including vertical ones where x is constant."
+            },
+            {
+                "answer": "It is easier to solve using standard regression techniques.",
+                "correct": false,
+                "feedback": "Incorrect. Both representations can be used in regression, but ax + by + c = 0 is more general."
+            },
+            {
+                "answer": "It avoids division by zero when computing slopes.",
+                "correct": true,
+                "feedback": "Correct! The implicit form does not require slope computation, making it numerically stable."
+            },
+            {
+                "answer": "It ensures all lines are parallel to the x-axis by default.",
+                "correct": false,
+                "feedback": "Incorrect. The equation represents general lines, not just horizontal ones."
+            }
+        ]
+    }
+]
