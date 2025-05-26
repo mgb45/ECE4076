@@ -1,0 +1,240 @@
+[
+    {
+      "question": "What do you expect to see as the weights of the components in the mixture? Recall that for a GMM ∑ₖ wₖ = 1.",
+      "type": "many_choice",
+      "answers": [
+        {
+          "answer": "Approximately [0.5, 0.5]",
+          "correct": true,
+          "feedback": "Correct! Since there are 250 samples in each cluster, we expect the mixture weights to be roughly equal."
+        },
+        {
+          "answer": "[0.9, 0.1]",
+          "correct": false,
+          "feedback": "Incorrect. This would suggest one cluster dominates in size, which is not the case here."
+        },
+        {
+          "answer": "[1, 0]",
+          "correct": false,
+          "feedback": "Incorrect. This would imply only one component was found, but we clearly defined two clusters."
+        },
+        {
+          "answer": "[0.25, 0.75]",
+          "correct": false,
+          "feedback": "Incorrect. Both clusters have equal number of points, so we expect equal weights."
+        }
+      ]
+    },
+    {
+      "question": "What do you expect to see as the centers of the Gaussian components in the mixture?",
+      "type": "many_choice",
+      "answers": [
+        {
+          "answer": "Approximately [-2, 0] and [2, 0]",
+          "correct": true,
+          "feedback": "Correct! These are the centers used to generate the blobs, so the GMM should recover them."
+        },
+        {
+          "answer": "[0, 0] and [0, 0]",
+          "correct": false,
+          "feedback": "Incorrect. That would suggest all points are centered at the origin, which is not true for this dataset."
+        },
+        {
+          "answer": "Random locations since GMM centers are unpredictable",
+          "correct": false,
+          "feedback": "Incorrect. While initialization may vary, GMMs converge to fit the underlying data distribution, recovering true cluster centers when well-separated."
+        },
+        {
+          "answer": "[-4, 0] and [4, 0]",
+          "correct": false,
+          "feedback": "Incorrect. Those values are too far from the actual centers used in make_blobs."
+        }
+      ]
+    },
+    {
+      "question": "What do you expect to see as the covariance matrix of the Gaussian components?",
+      "type": "many_choice",
+      "answers": [
+        {
+          "answer": "Approximately [[0.0625, 0], [0, 0.0625]] for each component",
+          "correct": true,
+          "feedback": "Correct! The cluster_std was set to 0.25, and 0.25² = 0.0625, leading to a diagonal covariance matrix for each cluster."
+        },
+        {
+          "answer": "[[1, 0], [0, 1]] for both components",
+          "correct": false,
+          "feedback": "Incorrect. This would suggest the clusters are much more spread out than they are."
+        },
+        {
+          "answer": "[[0, 1], [1, 0]] indicating correlated features",
+          "correct": false,
+          "feedback": "Incorrect. The clusters are isotropic and uncorrelated, so we expect diagonal matrices."
+        },
+        {
+          "answer": "Covariances can't be estimated from GMMs",
+          "correct": false,
+          "feedback": "Incorrect. Covariances are a key part of GMMs and are explicitly modeled."
+        }
+      ]
+    },
+    {
+        "question": "Now apply GMM to X3 and plot the result. Are you still happy with the result?",
+        "type": "many_choice",
+        "answers": [
+          {
+            "answer": "Yes, GMM can model the clusters well even if they are stretched or rotated.",
+            "correct": true,
+            "feedback": "Correct! GMM is flexible because it models full covariance, making it suitable for elliptical or rotated clusters."
+          },
+          {
+            "answer": "No, GMM only works if clusters are spherical and well-separated.",
+            "correct": false,
+            "feedback": "Incorrect. That limitation applies more to K-Means than GMM. GMM is well-suited for affine-transformed clusters."
+          },
+          {
+            "answer": "Yes, because GMM ignores any affine transformations.",
+            "correct": false,
+            "feedback": "Incorrect. GMM doesn't ignore affine transformations—it actually models them via the covariance matrix."
+          },
+          {
+            "answer": "No, because GMM requires all clusters to be of equal size and shape.",
+            "correct": false,
+            "feedback": "Incorrect. GMM allows for clusters with different shapes, sizes, and orientations."
+          }
+        ]
+      },
+      {
+        "question": "Do you think K-Means algorithm can do a good job with this data?",
+        "type": "many_choice",
+        "answers": [
+          {
+            "answer": "No, K-Means assumes spherical clusters and may fail on affine-transformed clusters.",
+            "correct": true,
+            "feedback": "Correct! K-Means uses Euclidean distance, which is not well-suited for clusters with covariance or rotation."
+          },
+          {
+            "answer": "Yes, K-Means is flexible and can model rotated or elliptical clusters.",
+            "correct": false,
+            "feedback": "Incorrect. K-Means struggles with non-spherical or rotated clusters because it assumes isotropic variance."
+          },
+          {
+            "answer": "Yes, as long as the number of clusters is known, K-Means always works well.",
+            "correct": false,
+            "feedback": "Incorrect. Knowing the number of clusters helps, but the shape and orientation still matter."
+          },
+          {
+            "answer": "No, because K-Means cannot compute cluster centroids.",
+            "correct": false,
+            "feedback": "Incorrect. K-Means does compute centroids; its problem here is the assumption of cluster shape."
+          }
+        ]
+      },
+      {
+        "question": "What will likely happen if you increase the number of components in the GMM when clustering the two-moon dataset?",
+        "type": "many_choice",
+        "answers": [
+          {
+            "answer": "The GMM may start to approximate the curved shape of each moon using multiple Gaussian components.",
+            "correct": true,
+            "feedback": "Correct! GMMs can approximate non-linear structures like the moons by using several overlapping Gaussian components to follow the shape."
+          },
+          {
+            "answer": "The GMM will perfectly segment each moon into a single cluster.",
+            "correct": false,
+            "feedback": "Incorrect. A single Gaussian component cannot capture the curved, non-linear structure of a moon-shaped cluster."
+          },
+          {
+            "answer": "Increasing components always leads to worse clustering results.",
+            "correct": false,
+            "feedback": "Incorrect. While too many components can lead to overfitting, more components can improve approximation of complex shapes—up to a point."
+          },
+          {
+            "answer": "The GMM will be unable to handle the dataset, regardless of the number of components.",
+            "correct": false,
+            "feedback": "Incorrect. While GMM has limitations with non-convex clusters, increasing components helps it adapt better to such structures."
+          }
+        ]
+      },
+      
+        {
+          "question": "What happens when you reduce the number of PCA components before fitting the GMM?",
+          "type": "many_choice",
+          "answers": [
+            {
+              "answer": "The generated images become blurrier and lose detail.",
+              "correct": true,
+              "feedback": "Correct! Fewer components mean less information is retained, leading to lower-quality image reconstructions."
+            },
+            {
+              "answer": "The generated images improve in clarity due to dimensionality reduction.",
+              "correct": false,
+              "feedback": "Incorrect. Reducing components discards useful variance, typically reducing image quality."
+            },
+            {
+              "answer": "The GMM becomes more likely to overfit the data.",
+              "correct": false,
+              "feedback": "Incorrect. Reducing dimensions generally reduces overfitting, not increases it."
+            },
+            {
+              "answer": "The output images show random noise instead of digit-like structures.",
+              "correct": false,
+              "feedback": "Incorrect. Some structure is usually preserved even at lower dimensions, though detail is lost."
+            }
+          ]
+        },
+        {
+          "question": "How does increasing the number of PCA components affect the GMM-generated images?",
+          "type": "many_choice",
+          "answers": [
+            {
+              "answer": "The images become more detailed and realistic.",
+              "correct": true,
+              "feedback": "Correct! More components capture more variance from the original dataset, improving fidelity of the samples."
+            },
+            {
+              "answer": "The images become noisier due to overfitting.",
+              "correct": false,
+              "feedback": "Incorrect. Overfitting is more likely due to GMM complexity, not necessarily due to increasing PCA components."
+            },
+            {
+              "answer": "The generated images become smaller in resolution.",
+              "correct": false,
+              "feedback": "Incorrect. Resolution is not affected by the number of PCA components directly."
+            },
+            {
+              "answer": "The GMM fails to converge with more PCA components.",
+              "correct": false,
+              "feedback": "Incorrect. While convergence may slow down with high dimensions, it doesn’t usually fail entirely."
+            }
+          ]
+        },
+        {
+          "question": "What happens when you expand the GMM model to include multiple image classes?",
+          "type": "many_choice",
+          "answers": [
+            {
+              "answer": "The generated samples may contain features from multiple classes, leading to hybrid or ambiguous images.",
+              "correct": true,
+              "feedback": "Correct! Without class conditioning, GMM components may mix class-specific features, reducing clarity."
+            },
+            {
+              "answer": "The generated images improve in quality as the GMM has more data to model.",
+              "correct": false,
+              "feedback": "Incorrect. More data is available, but increased class variability can confuse the GMM without class separation."
+            },
+            {
+              "answer": "The GMM automatically learns to separate classes perfectly.",
+              "correct": false,
+              "feedback": "Incorrect. GMM is unsupervised and does not inherently know the class labels."
+            },
+            {
+              "answer": "The number of PCA components must always be reduced when using multiple classes.",
+              "correct": false,
+              "feedback": "Incorrect. You can choose the number of PCA components independently of how many classes you include."
+            }
+          ]
+        }
+      
+      
+  ]
+  

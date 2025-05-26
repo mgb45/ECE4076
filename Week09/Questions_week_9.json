@@ -1,0 +1,54 @@
+[
+  {
+    "question": "what will happen if you start from (x₀ = 0, y₀ = 0)?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "It converges to a nearby local minimum.",
+        "correct": true,
+        "feedback": "Correct. The point (0, 0) is close to a basin of attraction that leads to one of Himmelblau’s local minima."
+      },
+      {
+        "answer": "It diverges to infinity.",
+        "correct": false,
+        "feedback": "Incorrect. Himmelblau’s function is smooth and bounded near (0, 0); divergence would usually only happen if the learning rate is too large."
+      },
+      {
+        "answer": "It oscillates without converging.",
+        "correct": false,
+        "feedback": "Incorrect. Oscillations can occur if the learning rate is too high, but with a reasonable value, gradient descent will typically converge from this point."
+      },
+      {
+        "answer": "It immediately reaches a saddle point.",
+        "correct": false,
+        "feedback": "Incorrect. (0, 0) is not located at a saddle point of the function."
+      }
+    ]
+  },
+  {
+    "question": "what will happen if you start from (x₀ = 0, y₀ = -1)?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "It converges to a different local minimum compared to (0, 0).",
+        "correct": true,
+        "feedback": "Correct. The optimizer starts in a different region of the function's surface and is attracted to a different minimum."
+      },
+      {
+        "answer": "It follows the same path as starting from (0, 0).",
+        "correct": false,
+        "feedback": "Incorrect. Even small changes in starting location can lead gradient descent to a different basin of attraction."
+      },
+      {
+        "answer": "It always reaches the global minimum.",
+        "correct": false,
+        "feedback": "Incorrect. Himmelblau’s function has multiple equivalent minima; the result depends on initialization."
+      },
+      {
+        "answer": "It oscillates or bounces around the landscape before settling.",
+        "correct": false,
+        "feedback": "Partially true if the learning rate is too high. Oscillations occur when steps overshoot the curvature of the surface, especially near steep valleys."
+      }
+    ]
+  }
+]

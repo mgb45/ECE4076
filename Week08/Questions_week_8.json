@@ -1,0 +1,243 @@
+
+[
+  {
+    "question": "What is the derivative of the sigmoid function σ(x)?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "σ(x) * (1 - σ(x))",
+        "correct": true,
+        "feedback": "Correct! The derivative of the sigmoid function is σ(x) multiplied by (1 - σ(x))."
+      },
+      {
+        "answer": "σ(x)²",
+        "correct": false,
+        "feedback": "Incorrect. It's not simply the square of the sigmoid."
+      },
+      {
+        "answer": "1 / (1 + e^x)",
+        "correct": false,
+        "feedback": "Incorrect. That is the form of the sigmoid itself, not its derivative."
+      },
+      {
+        "answer": "-σ(x) * (1 - σ(x))",
+        "correct": false,
+        "feedback": "Incorrect. The derivative is positive, not negative."
+      }
+    ]
+  },
+  
+  {
+    "question": "Based on the plotted binary cross-entropy losses, which statements are true?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "When y = 1, the loss is low if y_hat is close to 1.",
+        "correct": true,
+        "feedback": "Correct! The prediction matches the label well, so the loss is small."
+      },
+      {
+        "answer": "When y = 0, the loss is low if y_hat is close to 0.",
+        "correct": true,
+        "feedback": "Correct! When the prediction is near 0 for y = 0, the loss is also small."
+      },
+      {
+        "answer": "When y_hat is wrong (close to 0 for y = 1 or close to 1 for y = 0), the loss becomes very large.",
+        "correct": true,
+        "feedback": "Correct! Incorrect predictions lead to very large loss values."
+      },
+      {
+        "answer": "The loss is always the same, regardless of y.",
+        "correct": false,
+        "feedback": "Incorrect. The loss depends heavily on whether the true label is 0 or 1."
+      }
+    ]
+  },
+  {
+    "question": "On an easy-to-classify dataset, what is likely to happen if the learning rate ($\\eta$) is moderately high (e.g., 0.5)?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "The model may still converge quickly to a good solution.",
+        "correct": true,
+        "feedback": "Correct! For simple datasets, even moderately high learning rates often work well."
+      },
+      {
+        "answer": "The model will likely diverge immediately.",
+        "correct": false,
+        "feedback": "Incorrect. On an easy dataset, moderate learning rates often converge fine."
+      },
+      {
+        "answer": "The training might oscillate a bit but still find a good decision boundary.",
+        "correct": true,
+        "feedback": "Correct! Some small oscillations can occur, but they usually settle."
+      }
+    ]
+  },
+  {
+    "question": "What is a potential risk if the learning rate is set too low even on an easy dataset?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "Training could be unnecessarily slow.",
+        "correct": true,
+        "feedback": "Correct! A low learning rate can slow down training even when the problem is simple."
+      },
+      {
+        "answer": "The model may never find a correct decision boundary.",
+        "correct": false,
+        "feedback": "Incorrect. Logistic regression can eventually find the correct boundary even with a low learning rate, just slower."
+      }
+    ]
+  },
+  {
+    "question": "How does changing the number of training iterations affect performance on an easy dataset?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "Few iterations may already be enough for good accuracy.",
+        "correct": true,
+        "feedback": "Correct! Simple datasets often converge in fewer iterations."
+      },
+      {
+        "answer": "More iterations will always drastically improve results.",
+        "correct": false,
+        "feedback": "Incorrect. After convergence, more iterations don't meaningfully improve performance."
+      },
+      {
+        "answer": "Training for too long might lead to overfitting if not careful.",
+        "correct": true,
+        "feedback": "Correct! Even simple datasets can overfit if training continues without early stopping or regularization."
+      }
+    ]
+  },
+  {
+    "question": "You've seen filters a bit like this before, do you remember what they do?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "They detect edges and changes in intensity.",
+        "correct": true,
+        "feedback": "Correct! Filters like this are often used to highlight edges or transitions in pixel intensity."
+      },
+      {
+        "answer": "They blur the image to reduce noise.",
+        "correct": false,
+        "feedback": "Incorrect. While filters can smooth, this particular filter is designed to enhance edges."
+      },
+      {
+        "answer": "They identify specific objects like faces or eyes directly.",
+        "correct": false,
+        "feedback": "Incorrect. Filters like these help identify features but don't directly recognize objects."
+      }
+    ]
+  },
+  {
+    "question": "What do you think these filters will extract from an image of a face?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "They will extract edges and transitions in the image, like the contour of facial features.",
+        "correct": true,
+        "feedback": "Correct! The filter will highlight areas where there are sharp changes in intensity, such as the edges of the eyes, nose, and mouth."
+      },
+      {
+        "answer": "They will recognize and classify the face.",
+        "correct": false,
+        "feedback": "Incorrect. The filter will only extract basic features, not classify them."
+      },
+      {
+        "answer": "They will smooth the image, making it easier to detect faces.",
+        "correct": false,
+        "feedback": "Incorrect. This filter doesn't smooth the image; it enhances high-frequency features like edges."
+      }
+    ]
+  },
+  {
+    "question": "Try your own image and see if this dodgy face detector is really any good. What do you think?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "It may struggle with varying lighting, poses, or facial expressions.",
+        "correct": true,
+        "feedback": "Correct! Simple face detectors often struggle with variations like lighting, angle, and expression."
+      },
+      {
+        "answer": "It will work perfectly in all conditions because face features are easily detectable.",
+        "correct": false,
+        "feedback": "Incorrect. Even advanced detectors face challenges with variations in face position and lighting."
+      },
+      {
+        "answer": "It may not detect faces at all because the image is too cluttered.",
+        "correct": false,
+        "feedback": "Incorrect. The detector might still pick up faces, but it will be affected by clutter and environmental factors."
+      }
+    ]
+  },
+  {
+    "question": "This detector assumes we had cropped boxes around the faces already. What strategy would you use if you had an image without the face already cropped and centered?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "Use a **sliding window** approach to scan the image for face-like patterns at different scales.",
+        "correct": true,
+        "feedback": "Correct! Sliding windows allow for detecting faces at various locations and scales in the image."
+      },
+      {
+        "answer": "Manually crop the faces from the image to ensure they are centered for detection.",
+        "correct": false,
+        "feedback": "Incorrect. Manual cropping doesn't scale well for real-time or large datasets."
+      },
+      {
+        "answer": "Resize the entire image to a standard size and apply face detection without cropping.",
+        "correct": false,
+        "feedback": "Incorrect. Resizing the image alone will not address the need for detecting faces at various locations."
+      }
+    ]
+  },
+  {
+    "question": "What kind of issues do you think our choice of training data would introduce if we tried to deploy this model?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "The model may perform poorly if the training data did not cover variations in pose, lighting, or background.",
+        "correct": true,
+        "feedback": "Correct! A narrow training dataset can lead to poor generalization when faces appear in different conditions."
+      },
+      {
+        "answer": "The model will work equally well regardless of the quality of the training data.",
+        "correct": false,
+        "feedback": "Incorrect. Training data quality is crucial for the model's ability to generalize to new, unseen data."
+      },
+      {
+        "answer": "The model will be biased towards faces that closely match those in the training data.",
+        "correct": true,
+        "feedback": "Correct! The model will likely struggle with faces that don't resemble those in the training data, especially if diversity was lacking."
+      }
+    ]
+  },
+  {
+    "question": "How would you improve this classifier?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "Increase the diversity of training data, covering different angles, lighting, and face shapes.",
+        "correct": true,
+        "feedback": "Correct! A more diverse dataset helps the model generalize to a wider range of faces."
+      },
+      {
+        "answer": "Use a more complex neural network or deep learning model to improve performance.",
+        "correct": true,
+        "feedback": "Correct! Advanced models like CNNs are often more robust in handling various conditions and features."
+      },
+      {
+        "answer": "Keep the model simple and only train it with faces that are perfectly aligned and centered.",
+        "correct": false,
+        "feedback": "Incorrect. A more rigid model will fail in real-world applications where faces are often not perfectly aligned."
+      }
+    ]
+  }
+]
+    
+    
+
