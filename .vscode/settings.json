@@ -1,0 +1,36 @@
+{
+    // Python Configuration
+    "python.defaultInterpreterPath": "${workspaceFolder}/ece4076_env/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticsMode": "workspace",
+
+    // Jupyter Configuration
+    "jupyter.notebookFileRoot": "${fileDirname}",
+    "jupyter.kernels.ignoreKernelNotFound": true,
+    "notebook.formatOnSave.enabled": false,
+
+    // Code Formatting (optional, nice to have)
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "ms-python.python",
+    "python.formatting.provider": "none",
+
+    // Display
+    "editor.lineNumbers": "on",
+    "editor.wordWrap": "on",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/.pytest_cache": true,
+        "**/node_modules": true
+    },
+
+    // Recommended settings for better experience
+    "editor.rulers": [80, 120],
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ]
+}
