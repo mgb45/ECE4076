@@ -6,6 +6,34 @@ This repository contains in-class activities using Jupyter notebooks alongside p
 
 ---
 
+## Course Content
+
+### Main Weeks
+
+- **Week 1:** Image handling and basic manipulation, high dimensional signals
+- **Week 2:** Image filtering, Difference of Gaussians, Keypoint Detection, Patch Matching
+- **Week 3:** Invariances and image transformations, asymmetric feature matching
+- **Week 4:** Camera models and homography estimation using RANSAC
+- **Week 5:** Camera projection, vanishing points and lines
+- **Week 6:** Multiple view geometry, space carving
+- **Week 7:** Clustering and Gaussian mixture models
+- **Week 8:** Logistic regression and face detection
+- **Week 9:** Understanding gradient descent
+- **Week 10:** Object detection with AlexNet and ResNets
+- **Week 11:** Object recognition with RCNNs and YOLO
+- **Week 12:** Image segmentation with U-Nets
+
+### Bonus Content
+
+Additional material available in the `bonus_content/` folder:
+- Vision Transformers
+- Variational Autoencoders
+- Generative Adversarial Networks
+- CLIP (Contrastive Language-Image Pre-training)
+- Diffusion Models
+
+---
+
 ## Installation (5 minutes)
 
 **Warning:** This installation will take a significant amount of disk space. If your hard drive is full, you may want to consider opening the notebooks in Google Colab instead and installing required packages as needed.
@@ -92,36 +120,9 @@ jupyter notebook
 
 ---
 
-## Course Content
-
-### Main Weeks
-
-- **Week 1:** Image handling and basic manipulation, high dimensional signals
-- **Week 2:** Image filtering, Difference of Gaussians, Keypoint Detection, Patch Matching
-- **Week 3:** Invariances and image transformations, asymmetric feature matching
-- **Week 4:** Camera models and homography estimation using RANSAC
-- **Week 5:** Camera projection, vanishing points and lines
-- **Week 6:** Multiple view geometry, space carving
-- **Week 7:** Clustering and Gaussian mixture models
-- **Week 8:** Logistic regression and face detection
-- **Week 9:** Understanding gradient descent
-- **Week 10:** Object detection with AlexNet and ResNets
-- **Week 11:** Object recognition with RCNNs and YOLO
-- **Week 12:** Image segmentation with U-Nets
-
-### Bonus Content
-
-Additional material available in the `bonus_content/` folder:
-- Vision Transformers
-- Variational Autoencoders
-- Generative Adversarial Networks
-- CLIP (Contrastive Language-Image Pre-training)
-- Diffusion Models
-
 ### Advanced Packages (Optional)
 
 Some bonus notebooks require additional packages:
-- **YOLO (Week 11):** Uncomment `super-gradients` in `requirements.txt` and run `pip install -r requirements.txt`
 - **CLIP (Bonus):** Uncomment CLIP in `requirements.txt` and reinstall
 
 ---
@@ -195,43 +196,6 @@ rm -rf ece4076_env
 1. Check the error message—it often contains the solution
 2. Search the error online (Stack Overflow, GitHub)
 3. Contact your instructor
-
----
-
-## Environment & Packages
-
-**Virtual Environment:** `ece4076_env` (created by installer)
-
-**Core Packages:**
-- NumPy - Numerical computing
-- OpenCV - Computer vision
-- PyTorch - Deep learning
-- Matplotlib - Plotting
-- Jupyter - Interactive notebooks
-
-See `requirements.txt` for the complete list.
-
----
-
-## Quick Commands
-
-```bash
-# Activate environment
-source ece4076_env/bin/activate      # Linux/macOS
-ece4076_env\Scripts\activate.bat      # Windows
-
-# Check Python version
-python --version
-
-# List installed packages
-pip list
-
-# Start Jupyter in browser (if not using VS Code)
-jupyter notebook
-
-# Deactivate environment
-deactivate
-```
 
 ---
 
