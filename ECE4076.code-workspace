@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.defaultInterpreterPath": "${workspaceFolder}/ece4076_env/bin/python",
+		"jupyter.notebookFileRoot": "${workspaceFolder}"
+	}
+}
