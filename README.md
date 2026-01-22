@@ -19,7 +19,7 @@ This repository contains in-class activities using Jupyter notebooks alongside p
 - **Week 7:** Clustering and Gaussian mixture models
 - **Week 8:** Logistic regression and face detection
 - **Week 9:** Understanding gradient descent
-- **Week 10:** Object detection with AlexNet and ResNets
+- **Week 10:** Object detection with AlexNet and ResNets, Attention
 - **Week 11:** Object recognition with RCNNs and YOLO
 - **Week 12:** Image segmentation with U-Nets
 
@@ -28,6 +28,7 @@ This repository contains in-class activities using Jupyter notebooks alongside p
 Additional material available in the `bonus_content/` folder:
 - Vision Transformers
 - Variational Autoencoders
+- Vector Quantised Variational Autoencoders
 - Generative Adversarial Networks
 - CLIP (Contrastive Language-Image Pre-training)
 - Diffusion Models
@@ -96,35 +97,6 @@ jupyter notebook
 | Run all cells | View → Run All Cells |
 | Run cells above | Cell menu → Run Above |
 
-### Useful Shortcuts
-
-| Action | Shortcut |
-|--------|----------|
-| Command Palette | Ctrl+Shift+P (Cmd+Shift+P on Mac) |
-| Find File | Ctrl+P (Cmd+P) |
-| Find in Files | Ctrl+Shift+F (Cmd+Shift+F) |
-| Toggle Terminal | Ctrl+` |
-| Split Editor | Ctrl+\ |
-
-### Python IntelliSense
-
-- Type code → Auto-suggestions appear
-- Ctrl+Space → Manual suggestions
-- Hover over functions → See documentation
-
-### Debugging
-
-1. Click left margin next to line numbers to set breakpoints
-2. Run → Start Debugging (F5)
-3. Use debug panel to step through code
-
----
-
-### Advanced Packages (Optional)
-
-Some bonus notebooks require additional packages:
-- **CLIP (Bonus):** Uncomment CLIP in `requirements.txt` and reinstall
-
 ---
 
 ## Troubleshooting
@@ -188,14 +160,14 @@ rm -rf ece4076_env
 ./install.sh
 
 # Windows
-# Delete the ece4076_env folder manually
-# Then double-click install.bat
+Delete the ece4076_env folder manually
+Then double-click install.bat
 ```
 
 ### Still stuck?
 1. Check the error message—it often contains the solution
-2. Search the error online (Stack Overflow, GitHub)
-3. Contact your instructor
+2. Search the error online (Gemini, DeepSeek, GPT, etc.)
+3. Ask on our forums
 
 ---
 
