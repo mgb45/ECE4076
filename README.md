@@ -78,7 +78,8 @@ If you prefer Jupyter in your browser:
 
 ```bash
 # Activate environment
-source ece4076_env/bin/activate      # Linux/macOS
+source ece4076_env/bin/activate      # Linux
+. ece4076_env/bin/activate           # macOS
 ece4076_env\Scripts\activate.bat      # Windows
 
 # Start Jupyter
@@ -148,7 +149,8 @@ python -m ipykernel install --user --name ece4076 --display-name "ECE4076"
 ### "ImportError: No module named 'cv2'" or similar
 **Solution:** Activate the environment before running notebooks
 ```bash
-source ece4076_env/bin/activate      # Linux/macOS
+source ece4076_env/bin/activate      # Linux
+. ece4076_env/bin/activate           # macOS
 ece4076_env\Scripts\activate.bat      # Windows
 jupyter notebook
 ```
