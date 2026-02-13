@@ -136,7 +136,6 @@ dmypy.json
 *ubyte
 *.gz
 *.png
-*.txt
 *.zip
 *.xml
 *.jpg
